@@ -1,0 +1,442 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080610;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* PAGE SYSTEM */
+.page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 45px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 40%,
+            #241044 0%,
+            #100a1d 45%,
+            #080610 100%
+        );
+
+    animation: fadeIn 0.7s ease;
+}
+
+.page.active {
+    display: flex;
+}
+
+.content {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    animation: riseIn 0.8s ease both;
+}
+
+.wide-content {
+    max-width: 850px;
+}
+
+.eyebrow {
+    color: #bd91ff;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 75px);
+    line-height: 1.12;
+}
+
+h2 {
+    font-size: clamp(30px, 6vw, 45px);
+}
+
+h1 span,
+h2 span {
+    color: #bd80ff;
+    text-shadow: 0 0 25px #8e35ff80;
+}
+
+.description {
+    color: #b8abc9;
+    line-height: 1.8;
+    font-size: 14px;
+    max-width: 470px;
+    margin: 22px auto 30px;
+}
+
+.glowing-heart {
+    color: #c17aff;
+    font-size: 65px;
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 15px #a13cff,
+        0 0 45px #a13cff;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.big-heart {
+    font-size: 75px;
+}
+
+.heart-divider {
+    color: #b87aff;
+    margin-top: 25px;
+    font-size: 24px;
+    letter-spacing: 10px;
+}
+
+/* BUTTONS */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.main-btn {
+    background: linear-gradient(135deg, #a64dff, #6e26bd);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 0 25px #8d35df55;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.main-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px #a64dff99;
+}
+
+/* ANNIVERSARY LOGIN */
+#loginPage {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #35145d,
+            #10091d 55%,
+            #080610
+        );
+}
+
+.date-label {
+    display: block;
+    color: #d9c2ff;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+#anniversaryForm {
+    max-width: 360px;
+    margin: auto;
+}
+
+#anniversaryDate {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #783bb0;
+    background: #160e25;
+    color: white;
+    font-family: inherit;
+    margin-bottom: 18px;
+    color-scheme: dark;
+}
+
+#anniversaryForm .main-btn {
+    width: 100%;
+}
+
+#loginError {
+    color: #ff8ca8;
+    font-size: 12px;
+    margin-top: 14px;
+    min-height: 18px;
+}
+
+.tiny-note {
+    font-size: 11px;
+    color: #88799c;
+    margin-top: 15px;
+}
+
+/* PHOTO GALLERY */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 30px auto;
+    width: 100%;
+}
+
+.photo-card {
+    background: #171025;
+    border: 1px solid #4e2874;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #8a32db20;
+    animation: riseIn 0.8s ease both;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.photo-card p {
+    color: #d7baff;
+    font-size: 12px;
+    padding: 12px 5px 5px;
+}
+
+/* LOVE LETTER */
+.letter-content {
+    max-width: 650px;
+}
+
+.envelope {
+    font-size: 55px;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.letter-box {
+    text-align: left;
+    background: #160e25;
+    border: 1px solid #58317e;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 25px auto;
+    box-shadow: 0 0 30px #8129d522;
+}
+
+.letter-box p {
+    color: #d1c3df;
+    line-height: 1.9;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.letter-box .signature {
+    color: #c58cff;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+/* PROPOSAL */
+.proposal-title {
+    font-size: clamp(39px, 8vw, 72px);
+    letter-spacing: 2px;
+}
+
+.proposal-title span {
+    color: #d19aff;
+    text-shadow:
+        0 0 10px #a64dff,
+        0 0 30px #a64dff,
+        0 0 55px #7c2bd3;
+}
+
+.answer-area {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 180px;
+    margin: 15px auto;
+    overflow: visible;
+    touch-action: pan-y;
+}
+
+.yes-btn,
+.no-btn {
+    min-width: 115px;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.yes-btn {
+    background: #a64dff;
+    color: white;
+    box-shadow: 0 0 25px #a64dff70;
+
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.yes-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.no-btn {
+    background: #292333;
+    color: #d2c8df;
+    border: 1px solid #655477;
+
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+
+    white-space: nowrap;
+}
+
+/* FINAL PAGE */
+.final-message {
+    color: #c58cff;
+    margin: 25px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+
+    .page {
+        padding: 35px 15px 50px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .photo-card {
+        padding: 7px;
+    }
+
+    .photo-card img {
+        height: auto;
+        max-height: 350px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .photo-card p {
+        font-size: 11px;
+    }
+
+    .letter-box {
+        padding: 22px;
+    }
+
+    .letter-box p {
+        font-size: 13px;
+    }
+
+    .answer-area {
+        height: 220px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        min-width: 100px;
+        padding: 13px 20px;
+    }
+
+    #anniversaryForm {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .photo-card img {
+        max-height: 280px;
+    }
+}
